@@ -17,7 +17,7 @@ describe('App', () => {
   it('should render sidebar', () => {
     const { getByText } = render(<App />)
     act(() => {
-      expect(getByText('Welcome to Sidebar!2')).toBeDefined()
+      expect(getByText('Welcome to Sidebar!')).toBeDefined()
     })
   })
 
