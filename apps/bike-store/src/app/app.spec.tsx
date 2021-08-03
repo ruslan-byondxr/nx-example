@@ -14,6 +14,13 @@ describe('App', () => {
     })
   })
 
+  it('should render sidebar', () => {
+    const { getByText } = render(<App />)
+    act(() => {
+      expect(getByText('Welcome to Sidebar!2')).toBeDefined()
+    })
+  })
+
   it('should have a greeting as the title', () => {
     const { getByText } = render(<App />)
     act(() => {
