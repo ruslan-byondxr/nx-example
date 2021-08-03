@@ -24,7 +24,7 @@ describe('App', () => {
   it('should have a greeting as the title', () => {
     const { getByText } = render(<App />)
     act(() => {
-      expect(getByText('Custom Header!')).toBeTruthy()
+      expect(getByText('BYONDXR')).toBeTruthy()
     })
   })
 })
