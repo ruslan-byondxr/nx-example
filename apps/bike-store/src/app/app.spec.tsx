@@ -4,7 +4,6 @@ import fetchMock from 'jest-fetch-mock'
 
 describe('App', () => {
   beforeEach(() => {
-    // if you have an existing `beforeEach` just add the following line to it
     fetchMock.dontMock()
   })
 
