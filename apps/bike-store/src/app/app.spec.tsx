@@ -1,17 +1,22 @@
-import { render } from '@testing-library/react';
-
-import App from './app';
+import { cleanup, render } from '@testing-library/react'
+import App from './app'
+import fetchMock from 'jest-fetch-mock'
 
 describe('App', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(<App />);
+  beforeEach(() => {
+    // if you have an existing `beforeEach` just add the following line to it
+    fetchMock.dontMock()
+  })
 
-    expect(baseElement).toBeTruthy();
-  });
+  it('should render successfully', () => {
+    const { baseElement } = render(<App />)
+
+    expect(baseElement).toBeTruthy()
+  })
 
   it('should have a greeting as the title', () => {
-    const { getByText } = render(<App />);
+    const { getByText } = render(<App />)
 
-    expect(getByText('Welcome to bike-store!')).toBeTruthy();
-  });
-});
+    expect(getByText('Custom Header!')).toBeTruthy()
+  })
+})

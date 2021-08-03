@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@stores/data": ["libs/data/src/index.ts"],
+      "@stores/header": ["libs/header/src/index.ts"],
+      "@stores/sidebar": ["libs/sidebar/src/index.ts"],
+      "@stores/utils": ["libs/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

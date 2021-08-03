@@ -1,13 +1,49 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+import { Header } from '@stores/header'
+import { Sidebar } from '@stores/sidebar'
+import { useEffect, useState } from 'react'
+import { shuffle } from '@stores/utils'
 
-import { ReactComponent as Logo } from './logo.svg';
-import star from './star.svg';
+interface User {
+  id: string
+  first_name: string
+  last_name: string
+  email: string
+  gender: string
+  ip_address: string
+}
 
 const StyledApp = styled.div`
   font-family: sans-serif;
-  min-width: 300px;
-  max-width: 600px;
-  margin: 50px auto;
+  height: calc(100vh - 10px);
+  display: grid;
+  grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
+  grid-template-rows: min-content min-content 1fr min-content;
+  gap: 1px;
+
+  header {
+    grid-column: 1/-1;
+  }
+
+  aside {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  main {
+    grid-column: 2/3;
+  }
+
+  .users-list {
+    display: grid;
+    grid-gap: 2rem;
+  }
+
+  .user-card {
+    box-shadow: 0px 1px 7px rgb(115 115 115 / 23%);
+    padding: 10px;
+    border-radius: 5px;
+  }
 
   .gutter-left {
     margin-left: 9px;
@@ -21,13 +57,6 @@ const StyledApp = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  header {
-    background-color: #143055;
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
   }
 
   main {
@@ -130,101 +159,63 @@ const StyledApp = styled.div`
     width: 16px;
     margin-right: 4px;
   }
-`;
+`
 
 export function App() {
+  const [users, setUsers] = useState<null | User[]>(null)
+  const [loading, setLoading] = useState<boolean>(false)
+
+  useEffect(() => {
+    getUsers()
+  }, [])
+
+  const getUsers = async () => {
+    setLoading(true)
+    try {
+      const res = await fetch('http://localhost:3333/api')
+      const users = await res.json()
+      if (users.length) {
+        const randomUsers: User[] | any = shuffle(users)
+        setUsers(randomUsers)
+      }
+    } catch (err) {
+      console.log(err)
+    } finally {
+      setLoading(false)
+    }
+  }
   return (
     <StyledApp>
-      <header className="flex">
-        <Logo width="75" height="75" />
-        <h1>Welcome to bike-store!</h1>
-      </header>
+      <Header />
+      <Sidebar />
+
       <main>
-        <h2>Resources &amp; Tools</h2>
-        <p>Thank you for using and showing some ♥ for Nx.</p>
-        <div className="flex github-star-container">
-          <a
-            href="https://github.com/nrwl/nx"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {' '}
-            If you like Nx, please give it a star:
-            <div className="github-star-badge">
-              <img src={star} className="material-icons" alt="" />
-              Star
-            </div>
-          </a>
+        <h2>Users &amp; list</h2>
+        <div className="users-list">
+          {users
+            ? users.map(
+                ({
+                  id,
+                  first_name,
+                  last_name,
+                  email,
+                  gender,
+                  ip_address,
+                }: User) => (
+                  <div key={id} className="user-card">
+                    <div>{first_name}</div>
+                    <div>{last_name}</div>
+                    <div>{email}</div>
+                    <div>{gender}</div>
+                    <div>{ip_address}</div>
+                  </div>
+                )
+              )
+            : 'Loading...'}
         </div>
-        <p>Here are some links to help you get started.</p>
-        <ul className="resources">
-          <li className="col-span-2">
-            <a
-              className="resource flex"
-              href="https://egghead.io/playlists/scale-react-development-with-nx-4038"
-            >
-              Scale React Development with Nx (Course)
-            </a>
-          </li>
-          <li className="col-span-2">
-            <a
-              className="resource flex"
-              href="https://nx.dev/latest/react/tutorial/01-create-application"
-            >
-              Interactive tutorial
-            </a>
-          </li>
-          <li className="col-span-2">
-            <a className="resource flex" href="https://nx.app/">
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 120 120"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M120 15V30C103.44 30 90 43.44 90 60C90 76.56 76.56 90 60 90C43.44 90 30 103.44 30 120H15C6.72 120 0 113.28 0 105V15C0 6.72 6.72 0 15 0H105C113.28 0 120 6.72 120 15Z"
-                  fill="#0E2039"
-                />
-                <path
-                  d="M120 30V105C120 113.28 113.28 120 105 120H30C30 103.44 43.44 90 60 90C76.56 90 90 76.56 90 60C90 43.44 103.44 30 120 30Z"
-                  fill="white"
-                />
-              </svg>
-              <span className="gutter-left">Nx Cloud</span>
-            </a>
-          </li>
-        </ul>
-        <h2>Next Steps</h2>
-        <p>Here are some things you can do with Nx.</p>
-        <details open>
-          <summary>Add UI library</summary>
-          <pre>{`# Generate UI lib
-nx g @nrwl/react:lib ui
-
-# Add a component
-nx g @nrwl/react:component xyz --project ui`}</pre>
-        </details>
-        <details>
-          <summary>View dependency graph</summary>
-          <pre>{`nx dep-graph`}</pre>
-        </details>
-        <details>
-          <summary>Run affected commands</summary>
-          <pre>{`# see what's been affected by changes
-nx affected:dep-graph
-
-# run tests for current changes
-nx affected:test
-
-# run e2e tests for current changes
-nx affected:e2e
-  `}</pre>
-        </details>
       </main>
     </StyledApp>
-  );
+  )
 }
 
-export default App;
+export default App

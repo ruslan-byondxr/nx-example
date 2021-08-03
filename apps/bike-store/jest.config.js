@@ -7,4 +7,7 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/bike-store',
-};
+  automock: false,
+  resetMocks: false,
+  setupFiles: ['./setupJest.js'],
+}

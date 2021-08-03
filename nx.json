@@ -14,7 +14,13 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
       }
     }
   },
@@ -33,6 +39,36 @@
     "bike-store-e2e": {
       "tags": [],
       "implicitDependencies": ["bike-store"]
+    },
+    "blog": {
+      "tags": []
+    },
+    "blog-e2e": {
+      "tags": [],
+      "implicitDependencies": ["blog"]
+    },
+    "data": {
+      "tags": []
+    },
+    "header": {
+      "tags": []
+    },
+    "header-e2e": {
+      "tags": [],
+      "implicitDependencies": ["header"]
+    },
+    "sidebar": {
+      "tags": []
+    },
+    "sidebar-e2e": {
+      "tags": [],
+      "implicitDependencies": ["sidebar"]
+    },
+    "users-api": {
+      "tags": []
+    },
+    "utils": {
+      "tags": []
     }
   }
 }
