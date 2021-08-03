@@ -30,6 +30,7 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "^12.6.3",
+    "@testing-library/jest-dom": "^5.14.1",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "document-register-element": "1.13.1",
