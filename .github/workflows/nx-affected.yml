@@ -11,9 +11,7 @@ jobs:
       matrix:
         node-version: [12.x]
         package_manager:
-          - npm
           - yarn
-          - pnpm     
     steps:
       - uses: actions/checkout@v2
         with:
