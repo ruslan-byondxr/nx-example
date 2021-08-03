@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -9,14 +9,14 @@ const StyledHeader = styled.header`
   color: white;
   padding: 5px;
   border-radius: 3px;
-`;
+`
 
 export function Header(props: HeaderProps) {
   return (
     <StyledHeader>
-      <h1>Custom Header!</h1>
+      <h1>BYONDXR</h1>
     </StyledHeader>
-  );
+  )
 }
 
-export default Header;
+export default Header
