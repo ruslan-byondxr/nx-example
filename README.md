@@ -1,6 +1,6 @@
 
 
-# Stores
+# Stores [![Nx Affected CI](https://github.com/ruslan-byondxr/nx-example/actions/workflows/nx-affected.yml/badge.svg)](https://github.com/ruslan-byondxr/nx-example/actions/workflows/nx-affected.yml)
 
 This project was generated using [Nx](https://nx.dev).
 
