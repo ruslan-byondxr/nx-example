@@ -21,11 +21,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: git fetch origin master
-      - run: yarn install
+      - run: yarn installk
       - name: Run Affected Tests
         shell: bash
         run: yarn affected:test --coverage -- --base=remotes/origin/master --head=HEAD
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.5.2
+        with:
+          directory: ./coverage
 
 
