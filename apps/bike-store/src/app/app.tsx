@@ -172,7 +172,7 @@ export function App() {
   const getUsers = async () => {
     setLoading(true)
     try {
-      const res = await fetch('http://localhost:3333/api')
+      const res = await fetch('https://api.jsonserve.com/oi347N')
       const users = await res.json()
       if (users.length) {
         const randomUsers: User[] | any = shuffle(users)
