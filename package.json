@@ -8,6 +8,7 @@
     "build": "nx build",
     "test": "nx test",
     "run-all-tests": "nx run-many --all --target=test",
+    "run-all-tests:coverage": "nx run-many --all --target=test --coverage",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
