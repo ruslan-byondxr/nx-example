@@ -24,6 +24,8 @@ jobs:
       - run: yarn install
       - name: Run Affected Tests
         shell: bash
-        run: yarn affected:test -- --base=remotes/origin/master --head=HEAD
-
+        run: yarn affected:test -- --parallel -- --ci --code-coverage
+      - name: Deploy to Netlify
+        shell: bash
+        run: NETLIFY_TOKEN=tHInavUB4ywYxyyFWCxUd0N0OvBLJ5xCoSFjtxTZ310 yarn affected:deploy --base=remotes/origin/master --head=HEAD
 
