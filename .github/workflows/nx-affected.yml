@@ -34,3 +34,5 @@ jobs:
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_DEPLOY_TO_PROD: true
+          NETLIFY_SITE_ID: 5cb3d8dd-45e9-4570-a9b2-208c0cc457aa
+          build_directory: yarn build bike-store
