@@ -28,4 +28,4 @@ jobs:
         run: yarn affected:test --codeCoverage -- --base=remotes/origin/master --head=HEAD
       - name: Deploy to Netlify
         shell: bash
-        run: NETLIFY_TOKEN=tHInavUB4ywYxyyFWCxUd0N0OvBLJ5xCoSFjtxTZ310 yarn affected:deploy
+        run: NETLIFY_TOKEN=tHInavUB4ywYxyyFWCxUd0N0OvBLJ5xCoSFjtxTZ310 yarn affected:deploy --base=remotes/origin/master --head=HEAD
