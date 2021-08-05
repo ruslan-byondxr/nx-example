@@ -27,7 +27,7 @@ jobs:
         run: yarn affected:test -- --base=remotes/origin/master --head=HEAD
       - name: Deploy to Netlify
         shell: bash
-        if: github.ref == 'refs/heads/master
+        if: github.ref == 'refs/heads/master'
         run: NETLIFY_TOKEN=tHInavUB4ywYxyyFWCxUd0N0OvBLJ5xCoSFjtxTZ310 yarn affected:deploy --base=remotes/origin/master --head=HEAD
 
 #  test:
