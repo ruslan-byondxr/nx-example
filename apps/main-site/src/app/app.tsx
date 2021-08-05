@@ -24,7 +24,7 @@ const StyledApp = styled.div`
   }
 
   header {
-    background-color: #328fdb;
+    background-color: #723b6b;
     color: white;
     padding: 5px;
     border-radius: 3px;
@@ -138,7 +138,7 @@ export function App() {
     <StyledApp>
       <header className="flex">
         <Logo width="75" height="75" />
-        <h1>Welcome to main-site!sda</h1>
+        <h1>Welcome to main-site!</h1>
       </header>
       <main>
         <h2>Resources &amp; Tools</h2>
