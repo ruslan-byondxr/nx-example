@@ -5,7 +5,7 @@ export interface HeaderProps {}
 
 const StyledHeader = styled.header`
   color: yellowgreen;
-  background-color: #143055;
+  background-color: #506627;
   padding: 5px;
   border-radius: 3px;
 `
