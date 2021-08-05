@@ -24,7 +24,7 @@ const StyledApp = styled.div`
   }
 
   header {
-    background-color: #328fdb;
+    background-color: #8b3b81;
     color: white;
     padding: 5px;
     border-radius: 3px;
@@ -138,10 +138,10 @@ export function App() {
     <StyledApp>
       <header className="flex">
         <Logo width="75" height="75" />
-        <h1>Welcome to main-site!56</h1>
+        <h1>Welcome to main-site!</h1>
       </header>
       <main>
-        <h2>Resources &amp; Tools</h2>
+        <h2>Resources &amp; Tools test2222</h2>
         <p>Thank you for using and showing some ♥ for Nx.</p>
         <div className="flex github-star-container">
           <a
