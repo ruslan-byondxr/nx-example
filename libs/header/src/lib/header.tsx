@@ -4,8 +4,8 @@ import styled from 'styled-components'
 export interface HeaderProps {}
 
 const StyledHeader = styled.header`
-  color: #3280cd;
-  background-color: #506627;
+  color: red;
+  background-color: #143055;
   padding: 5px;
   border-radius: 3px;
 `
