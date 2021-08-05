@@ -24,7 +24,7 @@ jobs:
       - run: yarn install
       - name: Run Affected Tests
         shell: bash
-        run: yarn affected:test --coverage -- --base=remotes/origin/master --head=HEAD
+        run: yarn affected:test --codeCoverage -- --base=remotes/origin/master --head=HEAD
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.5.2
         with:
