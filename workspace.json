@@ -291,6 +291,13 @@
       "sourceRoot": "apps/main-site/src",
       "projectType": "application",
       "targets": {
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/apps/main-site",
+            "siteId": "97ba2b23-7835-4662-bf99-4d5583c45d7c"
+          }
+        },
         "build": {
           "executor": "@nrwl/web:build",
           "outputs": ["{options.outputPath}"],

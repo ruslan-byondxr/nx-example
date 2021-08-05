@@ -26,3 +26,6 @@ jobs:
       - name: Run Affected Tests
         shell: bash
         run: yarn affected:test --codeCoverage -- --base=remotes/origin/master --head=HEAD
+      - name: Deploy to Netlify
+        shell: bash
+        run: NETLIFY_TOKEN=${{ secrets.NETLIFY_AUTH_TOKEN }} yarn affected:deploy -- --base=remotes/origin/master --head=HEAD
