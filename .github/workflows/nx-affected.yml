@@ -28,7 +28,7 @@ jobs:
       - name: Deploy to Netlify
         shell: bash
         if: github.ref == 'refs/heads/master'
-        run: NETLIFY_TOKEN=tHInavUB4ywYxyyFWCxUd0N0OvBLJ5xCoSFjtxTZ310 yarn affected:deploy --base=remotes/origin/master --head=HEAD
+        run: NETLIFY_TOKEN=tHInavUB4ywYxyyFWCxUd0N0OvBLJ5xCoSFjtxTZ310 yarn affected:deploy --base=master~1 --head=master
 
 #  test:
 #    runs-on: ubuntu-latest
