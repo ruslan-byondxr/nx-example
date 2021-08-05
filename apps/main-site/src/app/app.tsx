@@ -141,7 +141,7 @@ export function App() {
         <h1>Welcome to main-site!</h1>
       </header>
       <main>
-        <h2>Resources &amp; Tools</h2>
+        <h2>Resources &amp; Tools test2222</h2>
         <p>Thank you for using and showing some ♥ for Nx.</p>
         <div className="flex github-star-container">
           <a
