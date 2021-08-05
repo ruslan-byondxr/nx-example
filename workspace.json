@@ -6,6 +6,13 @@
       "sourceRoot": "apps/bike-store/src",
       "projectType": "application",
       "targets": {
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/apps/bike-store",
+            "siteId": "5cb3d8dd-45e9-4570-a9b2-208c0cc457aa"
+          }
+        },
         "build": {
           "executor": "@nrwl/web:build",
           "outputs": ["{options.outputPath}"],

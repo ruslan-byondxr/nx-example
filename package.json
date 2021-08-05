@@ -34,6 +34,7 @@
   "dependencies": {
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
+    "@netlify-builder/deploy": "^4.1.2",
     "@nrwl/next": "^12.6.3",
     "@testing-library/jest-dom": "^5.14.1",
     "core-js": "^3.6.5",
