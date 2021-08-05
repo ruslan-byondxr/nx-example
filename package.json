@@ -32,6 +32,8 @@
   },
   "private": true,
   "dependencies": {
+    "@emotion/react": "11.1.5",
+    "@emotion/styled": "11.1.5",
     "@nrwl/next": "^12.6.3",
     "@testing-library/jest-dom": "^5.14.1",
     "core-js": "^3.6.5",
@@ -51,6 +53,7 @@
     "@babel/preset-env": "7.12.13",
     "@babel/preset-react": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
+    "@emotion/babel-plugin": "11.2.0",
     "@nrwl/cli": "12.6.3",
     "@nrwl/cypress": "12.6.3",
     "@nrwl/eslint-plugin-nx": "12.6.3",
