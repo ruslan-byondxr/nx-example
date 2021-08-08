@@ -24,7 +24,7 @@ const StyledApp = styled.div`
   }
 
   header {
-    background-color: #8b3b81;
+    background-color: #345d92;
     color: white;
     padding: 5px;
     border-radius: 3px;
